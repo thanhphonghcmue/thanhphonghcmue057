@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<head lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ cá </title>
+    <style>
+         body {
+            background-image: url('underwater.jpg'); /* Đường dẫn tới hình ảnh */
+            background-size: cover; /* Để hình ảnh phủ đầy trang */
+            background-repeat: no-repeat; /* Ngăn hình lặp lại */
+        } 
+         /* Căn chỉnh player nhạc ở tay phải */
+         .audio-player {
+            position: fixed; /* Cố định ở vị trí */
+            right: 20px; /* Cách mép phải 20px */
+            bottom: 20px; /* Cách đáy 20px */
+            z-index: 1000; /* Đảm bảo player ở trên cùng */
+        }
+        
+        body {
+            margin: 0;
+            overflow: hidden; /* Ẩn thanh cuộn */
+            background-color: #87CEEB; /* Màu nền giống bầu trời */
+            display: flex;
+            justify-content: center; /* Căn giữa trang theo chiều ngang */
+            align-items: center; /* Căn giữa trang theo chiều dọc */
+            height: 100vh; /* Chiếm toàn bộ chiều cao cửa sổ */
+        }
+
+        /* Container chứa con cavoi */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%; /* Chiều cao của container bằng chiều cao của cửa sổ */
+        }
+
+        /* Lớp CSS cho con cavoi */
+        .cavoi {
+            position: absolute;
+            top: 75%; /* Bắt đầu từ gần 75% chiều cao */
+            left: 100%; /* Bắt đầu ngoài màn hình bên phải */
+            transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+            animation: moveRightToLeft 5s linear infinite; /* Áp dụng hiệu ứng di chuyển */
+        }
+
+        /* Định nghĩa hiệu ứng chuyển động */
+        @keyframes moveRightToLeft {
+            0% {
+                left: 100%; /* Bắt đầu từ ngoài màn hình bên phải */
+            }
+            100% {
+                left: -100px; /* Di chuyển đến bên trái của container */
+            }
+        }
+
+
+
+        /* Lớp CSS cho con casau */
+        .casau {
+            position: absolute;
+            top: 50%; /* Căn giữa theo chiều dọc */
+            left: 50%; /* Bắt đầu từ giữa màn hình */
+            transform: translate(-50%, -50%); /* Căn giữa hoàn hảo */
+            animation: moveRightToLeft 5s linear infinite; /* Áp dụng hiệu ứng di chuyển */
+        }
+
+        /* Định nghĩa hiệu ứng chuyển động */
+        @keyframes moveRightToLeft {
+            0% {
+                left: 100%; /* Bắt đầu từ ngoài màn hình bên phải */
+            }
+            100% {
+                left: -100px; /* Di chuyển đến bên trái của container */
+            }
+        }
+    
+
+
+
+        /* Đặt vị trí cho hình ảnh */
+        .cakho {
+            position: absolute;
+            top: 50%; /* Căn giữa theo chiều dọc */
+            left: -200px; /* Bắt đầu từ ngoài khung, bên trái */
+            width: 200px; /* Kích thước của ảnh */
+            height: auto; /* Tự động thay đổi chiều cao */
+            animation: moveLeftToRight 5s linear infinite; /* Áp dụng animation */
+        }
+
+        /* Animation để bơi từ trái qua phải */
+        @keyframes moveLeftToRight {
+            0% {
+                left: -200px; /* Bắt đầu ở ngoài bên trái */
+            }
+            50% {
+                left: 50%; /* Đến giữa trang */
+                transform: translateX(-50%); /* Để căn giữa ảnh */
+            }
+            100% {
+                left: 100%; /* Bơi đến ngoài bên phải */
+            }
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .po {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url('po.gif') no-repeat center center;
+            background-size: contain;
+            animation: movePo 4s infinite alternate;
+        }
+        @keyframes movePo {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-75vw);
+            }
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .vitll {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: url('vitll.gif') no-repeat center center;
+            background-size: contain;
+            animation: moveVitll 20s linear infinite;
+        }
+        @keyframes moveVitll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .bubbles {
+            position: absolute;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            background: url('bubbles.svg') no-repeat center center;
+            background-size: contain;
+            animation: moveBubbles 10s linear infinite;
+        }
+        @keyframes moveBubbles {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden; /* Ẩn thanh cuộn */
+        }
+        .sua {
+            width: 100px; /* Kích thước tùy chỉnh */
+            position: absolute;
+            bottom: 0; /* Đặt ảnh ở góc dưới */
+            left: -100px; /* Bắt đầu ngoài màn hình bên trái */
+            animation: moveRight 8s linear forwards; /* Di chuyển trong 8 giây */
+        }
+        @keyframes moveRight {
+            0% {
+                left: -100px; /* Bắt đầu ngoài màn hình bên trái */
+            }
+            100% {
+                left: 100vw; /* Đi hết màn hình bên phải */
+            }
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden; /* Ẩn thanh cuộn */
+        }
+        .pi {
+            width: 100px; /* Kích thước ảnh tùy chỉnh */
+            position: absolute;
+            bottom: 0; /* Đặt ảnh ở góc dưới */
+            right: 40%; /* Đặt ảnh ở 40% từ bên phải */
+            animation: moveUpDown 5s ease-in-out infinite; /* Di chuyển lên xuống */
+        }
+        @keyframes moveUpDown {
+            0% {
+                bottom: 0; /* Bắt đầu từ góc dưới */
+            }
+            25% {
+                bottom: 10px; /* Di chuyển lên một khoảng rất nhỏ */
+            }
+            50% {
+                bottom: 0; /* Quay lại vị trí ban đầu */
+            }
+            75% {
+                bottom: 10px; /* Di chuyển lên một lần nữa */
+            }
+            100% {
+                bottom: 0; /* Quay lại vị trí ban đầu */
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden; /* Ẩn thanh cuộn */
+        }
+        .rua2 {
+            width: 100px; /* Kích thước ảnh tùy chỉnh */
+            position: absolute;
+            bottom: 0; /* Đặt ảnh ở góc dưới */
+            right: 0; /* Bắt đầu từ góc dưới bên phải */
+            animation: moveDiagonal 5s ease-in-out forwards; /* Di chuyển xéo rồi quay lại */
+        }
+        @keyframes moveDiagonal {
+            0% {
+                bottom: 0;
+                right: 0; /* Bắt đầu từ góc dưới bên phải */
+            }
+            50% {
+                bottom: 150px; /* Di chuyển lên một khoảng vừa */
+                right: 150px; /* Di chuyển sang trái một khoảng vừa */
+            }
+            100% {
+                bottom: 0; /* Quay lại vị trí ban đầu */
+                right: 0;
+            }
+        }
+    </style>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden; /* Ẩn thanh cuộn */
+    }
+    .oc {
+        width: 100px; /* Kích thước tùy chỉnh */
+        position: absolute;
+        top: 50%; /* Căn giữa ảnh theo chiều dọc */
+        left: 30%; /* Bắt đầu từ 30% chiều rộng màn hình */
+        animation: moveLeftRight 10s ease-in-out infinite; /* Di chuyển qua lại trong 10 giây */
+    }
+    @keyframes moveLeftRight {
+        0% {
+            left: 30%; /* Bắt đầu từ 30% chiều rộng */
+        }
+        50% {
+            left: 10%; /* Di chuyển sang trái một khoảng vừa */
+        }
+        100% {
+            left: 30%; /* Quay lại vị trí ban đầu */
+        }
+    }
+    body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden; /* Ẩn thanh cuộn */
+        }
+        .rua2 {
+            width: 100px; /* Kích thước ảnh tùy chỉnh */
+            position: absolute;
+            bottom: 0; /* Đặt ảnh ở góc dưới */
+            right: 0; /* Bắt đầu từ góc dưới bên phải */
+            animation: moveDiagonal 5s ease-in-out forwards; /* Di chuyển xéo rồi quay lại */
+        }
+        @keyframes moveDiagonal {
+            0% {
+                bottom: 0;
+                right: 0; /* Bắt đầu từ góc dưới bên phải */
+            }
+            50% {
+                bottom: 150px; /* Di chuyển lên một khoảng vừa */
+                right: 150px; /* Di chuyển sang trái một khoảng vừa */
+            }
+            100% {
+                bottom: 0; /* Quay lại vị trí ban đầu */
+                right: 0;
+            }
+        }
+</style>
+    </style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden; /* Ẩn thanh cuộn */
+        }
+        .cua {
+            width: 100px; /* Kích thước tùy chỉnh */
+            position: absolute;
+            bottom: 0; /* Đặt ảnh ở góc dưới */
+            left: -100px; /* Bắt đầu ngoài màn hình bên trái */
+            animation: moveRight 15s linear infinite; /* Di chuyển trong 15 giây */
+        }
+        @keyframes moveRight {
+            0% {
+                left: -100px; /* Bắt đầu ngoài màn hình bên trái */
+            }
+            100% {
+                left: 100vw; /* Đi hết màn hình bên phải */
+            }
+        }
+      
+    </style>
+</head>
+<head>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Màu nền mặc định */
+            transition: background 0.5s ease; /* Hiệu ứng chuyển nền mượt */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+      
+    </style>
+</head>
+</head>
+<body>
+    
+    <button onclick="changeBackground()">Đổi Nền</button>
+
+    <script>
+        let currentBackgroundIndex = 0;
+        const backgrounds = [
+            'url("01.jpg")',
+            'url("02.jpg")',
+            'url("03.jpg")',
+            'url("04.jpg")',
+            'url("05.jpg")'
+        ];
+
+        function changeBackground() {
+            currentBackgroundIndex++;
+            if (currentBackgroundIndex >= backgrounds.length) {
+                currentBackgroundIndex = 0;
+            }
+            document.body.style.backgroundImage = backgrounds[currentBackgroundIndex];
+        }
+        
+    </script>
+</body>
+  
+    <!-- Player nhạc nằm ở tay phải -->
+    <div class="audio-player">
+        <audio id="music" src="./10-ngàn-năm-piano.mp3" loop controls></audio>
+    </div>
+</body>
+<body>
+
+    <div class="container">
+        <img src="cavoi.gif" alt="Cá Voi" class="cavoi">
+    </div>
+     
+    <div class="container">
+        <!-- Chèn hình ảnh con casau -->
+        <img src="casau.gif" alt="Con Casau" class="casau">
+    </div>
+    <div class="background">
+        <div class="gif-container">
+            <img src="cagai.gif" alt="GIF" class="gif-animation">
+        </div>
+        <div class="container">
+            <div class="po"></div>
+        </div>
+        <div class="container">
+            <div class="vitll"></div>
+        </div>
+        <body>
+            <div class="container">
+                <div class="bubbles"></div>
+            </div>
+    
+            <img src="cua.gif" alt="Cua" class="cua">
+            <img src="sua.gif" alt="Sua" class="sua">
+            <img src="oc.gif" alt="Oc" class="oc">
+            <img src="pi.gif" alt="Pi" class="pi">
+            <img src="09.gif" alt="09" class="rua2">
+        </body>
+</html>

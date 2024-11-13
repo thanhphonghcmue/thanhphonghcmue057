@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #87CEEB; /* Màu nền biển */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.cavoi {
+    position: absolute;
+    bottom: 50px;
+    left: -150px;
+    animation: swim 10s linear infinite;
+}
+
+@keyframes swim {
+    0% { left: -150px; }
+    100% { left: 100%; }
+}
+
+.gif-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveGif 5s infinite ease-in-out;
+}
+
+.gif-animation {
+    width: 50px; /* Đặt kích thước của GIF */
+    height: 50px;
+}
+
+/* Tạo hiệu ứng chuyển động nhỏ cho GIF */
+@keyframes moveGif {
+    0% {
+        transform: translate(-50%, -50%) translateX(0) translateY(0);
+    }
+    25% {
+        transform: translate(-50%, -50%) translateX(10px) translateY(10px);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateX(0) translateY(0);
+    }
+    75% {
+        transform: translate(-50%, -50%) translateX(-10px) translateY(-10px);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateX(0) translateY(0);
+    }
+}
+
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Để không bị cuộn khi bọt khí di chuyển lên trên */
+}
